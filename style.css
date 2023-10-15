@@ -1,0 +1,146 @@
+*{
+  padding:  0;
+  margin:  0;
+  box-sizing:  border-box;
+  font-family: 'NTR', sans-serif;
+}
+
+body{
+width:  100%;
+min-height:  100vh;
+}
+
+.background{
+  width:  100%;
+  height:  100vh;
+  background-color:hsla(0,0%,100%,1) ;
+background-image:
+radial-gradient(at 80% 0%, hsla(189,85%,87%,1) 0px, transparent 50%),
+radial-gradient(at 0% 50%, hsla(48,100%,89%,1) 0px, transparent 50%),
+radial-gradient(at 0% 100%, hsla(41,100%,86%,1) 0px, transparent 50%),
+radial-gradient(at 80% 100%, hsla(240,94%,87%,1) 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(266,94%,89%,1) 0px, transparent 50%);
+background-repeat:  no-repeat;
+background-size:  cover;
+}
+
+
+.header{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  background:  rgba(255,255,255, .3);
+  padding:  1.2rem 10%;
+  display:  flex;
+  justify-content:  space-between;
+  align-items:  center;
+  z-index:  100;
+  transition : .3s ease-out;
+}
+.header:hover{
+  background:  rgba(255,255,255, .5);
+}
+a{
+  text-decoration:  none;
+  color:  #000;
+}
+
+/* check this later*/
+.logo{
+  font-size:  2.1rem;
+  color:  #000;
+  font-weight:  700;
+  letter-spacing:  2px;
+}
+
+
+.nav-bar a{
+font-size:  1.3rem;
+font-weight:  600;
+text-transform: capitalize;
+letter-spacing : 1px;
+margin-left:  2.3rem;
+}
+
+
+.icons {
+  position:  absolute;
+  right:  5%;
+  font-size:  2.7rem;
+  cursor:  pointer;
+  display:  none;
+}
+
+#check{
+  display:  none;
+}
+
+  
+@media (max-width:992px) {
+  
+.header{
+  padding:  1.2rem 5%;
+}
+}
+
+@media (max-width:768px) {
+  
+  .header{
+  padding:  .5rem 5%;
+}
+  
+.icons{
+  display: inline-flex ;
+  font-size:  1.9rem;
+}
+
+#check:checked ~ .icons .fa-bars {
+  display: none;
+}
+
+.icons #close {
+  display:none;
+}
+
+#check:checked ~ .icons .fa-xmark {
+  display: block;
+}
+
+.nav-bar{
+  position:  absolute;
+  top:  100%;
+  left: 0;
+  width:  100%;
+  height: 0;
+  background:  rgba(255, 255, 255, .3);
+  transition:  .4s ease-out;
+  overflow:  hidden;
+}
+
+.checkbox:checked ~ .nav-bar {
+  height: 18rem;
+}
+
+.nav-bar a{
+  display:  block;
+  font-size:  1.1rem;
+  margin:  1rem 0;
+  text-align: center;
+  transform:  translateY(-50px);
+  transition:  .4s ease-out;
+}
+
+.checkbox:checked ~ .nav-bar a {
+  transform:  translateY(0);
+  opacity:  1;
+  transition-delay:  calc(.1s * var(--i));
+  
+}
+
+.logo{
+  font-size:  1.8rem;
+  letter-spacing:  1px;
+}
+
+}
